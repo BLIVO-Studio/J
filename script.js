@@ -29,3 +29,19 @@ onChildAdded(messagesRef, (snapshot) => {
   // append the list item to the message list
   messageList.appendChild(li);
 });
+
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+// TODO: Replace the following with your app's Firebase project configuration
+const firebaseConfig = {
+  //...
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+import { ref, push, onChildAdded } from "firebase/database";
+
+const messagesRef = ref(database, "messages");
+// the rest of the code
